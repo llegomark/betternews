@@ -103,16 +103,16 @@ export const Home: NextPage = () => {
       </Head>
       <Header />
       <main className="mx-auto mt-10 flex max-w-5xl flex-1 flex-col justify-center px-2 sm:mt-10">
-        <h2 className="max-w-5xl text-center text-4xl font-bold sm:text-7xl">
+        <h2 className="max-w-5xl text-center text-4xl font-bold sm:text-7xl md:text-6xl lg:text-7xl">
           Effortless News Reading with Artificial Intelligence (AI)
         </h2>
-        <p className="mt-10 text-center text-lg text-gray-500 sm:text-2xl">
+        <p className="mt-10 text-center text-lg text-gray-500 sm:text-2xl md:text-xl lg:text-2xl">
           Simply copy and paste any{" "}
           <Link
             href="https://www.rappler.com/"
             target={"_blank"}
             rel="noopener noreferrer"
-            className="font-bold text-green-500 underline-offset-2 transition hover:underline"
+            className="font-bold text-orange-500 underline-offset-2 transition hover:underline"
           >
             Rappler
           </Link>{" "}
@@ -126,7 +126,7 @@ export const Home: NextPage = () => {
         />
         {!loading && (
           <button
-            className="z-10 mx-auto mt-7 w-3/4 rounded-2xl border-gray-500 bg-green-500 p-3 text-lg font-bold transition hover:bg-green-400 sm:mt-10 sm:w-1/3"
+            className="z-10 mx-auto mt-7 w-3/4 rounded-2xl border-gray-500 bg-orange-600 p-3 text-lg font-bold transition hover:bg-orange-400 sm:mt-10 sm:w-1/3"
             onClick={() => generateSummary()}
           >
             Summarize
@@ -134,7 +134,7 @@ export const Home: NextPage = () => {
         )}
         {loading && (
           <button
-            className="z-10 mx-auto mt-7 w-3/4 cursor-not-allowed rounded-2xl border-gray-500 bg-green-500 p-3 text-lg font-medium transition hover:bg-green-400 sm:mt-10 sm:w-1/3"
+            className="z-10 mx-auto mt-7 w-3/4 cursor-not-allowed rounded-2xl border-gray-500 bg-orange-500 p-3 text-lg font-medium transition hover:bg-orange-400 sm:mt-10 sm:w-1/3"
             disabled
           >
             <div className="flex items-center justify-center text-white">

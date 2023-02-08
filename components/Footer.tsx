@@ -12,7 +12,7 @@ export default function Footer() {
         Copyright © {currentYear()}{" "}
         <Link
           href="/"
-          className="font-bold underline-offset-2 transition hover:underline"
+          className="font-bold underline-offset-2 transition hover:underline text-orange-500"
         >
           Mark Anthony Llego
         </Link>

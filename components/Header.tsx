@@ -7,7 +7,7 @@ export default function Header() {
       <a className="flex items-center space-x-3" href="/">
         <Image src="/betternews.svg" alt="better news logo" width={36} height={36} />
         <h2 className={clsx("text-lg sm:text-3xl")}>
-          <span className="text-green-500 font-bold">Better</span> <span className="font-bold">News</span>
+          <span className="text-orange-600 font-bold">Better</span> <span className="font-bold">News</span>
         </h2>
       </a>
     </div>
