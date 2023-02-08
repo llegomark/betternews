@@ -122,6 +122,7 @@ export const Home: NextPage = () => {
           type="text"
           value={curArticle}
           onChange={(e) => setCurArticle(e.target.value)}
+          placeholder="https://www.rappler.com/nation/supreme-court-decision-graft-charge-enrile-coco-levy-fund-scam/"
           className="mx-auto mt-10 w-full rounded-lg border border-gray-500 bg-black p-3 outline-1 outline-white sm:w-3/4 lg:w-full"
         />
         {!loading && (
@@ -129,7 +130,7 @@ export const Home: NextPage = () => {
             className="z-10 mx-auto mt-7 w-3/4 rounded-2xl border-gray-500 bg-orange-600 p-3 text-lg font-bold transition hover:bg-orange-400 sm:mt-10 sm:w-1/3"
             onClick={() => generateSummary()}
           >
-            Summarize
+            Generate Key Points
           </button>
         )}
         {loading && (
@@ -154,11 +155,11 @@ export const Home: NextPage = () => {
         />
         {summary && (
           <div className="mb-10 px-4">
-            <h2 className="mx-auto mt-16 max-w-3xl border-t border-gray-600 pt-8 text-center text-3xl font-bold sm:text-5xl">
-              Summary
+            <h2 className="mx-auto mt-16 max-w-3xl border-t border-gray-600 pt-8 text-center text-2xl font-bold sm:text-4xl">
+              Key Takeaways
             </h2>
             <div className="mx-auto mt-6 max-w-3xl text-lg leading-7">
-              {summary.split(/\d+\.\s/).map((sentence, index) => (
+              {summary.split(/key[\.\s]/i).map((sentence, index) => (
                 <p key={index} className="my-3">
                   {sentence}
                 </p>
