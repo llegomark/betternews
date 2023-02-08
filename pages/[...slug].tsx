@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Link from "next/link";
 
 export const Home: NextPage = () => {
   const [response, setResponse] = useState<Record<string, unknown> | null>(
@@ -106,14 +107,22 @@ export const Home: NextPage = () => {
           Effortless News Reading with Artificial Intelligence (AI)
         </h2>
         <p className="mt-10 text-center text-lg text-gray-500 sm:text-2xl">
-          Simply copy and paste any Rappler news article link below to get
-          started. Save time and avoid any biases with AI-generated summaries.
+          Simply copy and paste any{" "}
+          <Link
+            href="https://www.rappler.com/"
+            target={"_blank"}
+            rel="noopener noreferrer"
+            className="font-bold text-green-500 underline-offset-2 transition hover:underline"
+          >
+            Rappler
+          </Link>{" "}
+          news article link below to get started.
         </p>
         <input
           type="text"
           value={curArticle}
           onChange={(e) => setCurArticle(e.target.value)}
-          className="mx-auto mt-10 w-full rounded-lg border border-gray-500 bg-black p-3 outline-1 outline-white sm:mt-7 sm:w-3/4"
+          className="mx-auto mt-10 w-full rounded-lg border border-gray-500 bg-black p-3 outline-1 outline-white sm:w-3/4 lg:w-full"
         />
         {!loading && (
           <button
@@ -154,6 +163,17 @@ export const Home: NextPage = () => {
                   {sentence}
                 </p>
               ))}
+            </div>
+            <div className="mx-auto mt-6 max-w-3xl text-lg leading-7">
+              <p className="mt-2 flex rounded-lg bg-yellow-200 p-3 text-justify text-xs font-light leading-tight text-yellow-800">
+                <span className="md:pl-2">
+                  Disclaimer: This is an AI-generated summary of the original
+                  article. It is not intended to replace the original content.
+                  Accuracy and impartiality are not guaranteed. If you are not
+                  satisfied with the summary, simply click the "Summarize"
+                  button again for a new version.
+                </span>
+              </p>
             </div>
           </div>
         )}
