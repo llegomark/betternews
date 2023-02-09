@@ -12,7 +12,7 @@ export default function Header() {
         />
         <h2 className="text-lg sm:text-3xl">
           <span className="font-bold tracking-wider text-orange-600">
-            BetterNews
+            betternews
           </span>
         </h2>
       </a>
