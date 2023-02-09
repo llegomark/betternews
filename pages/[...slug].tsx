@@ -38,13 +38,13 @@ export const Home: NextPage = () => {
     setSummary("");
     if (url) {
       if (!url.includes("rappler.com")) {
-        toast.error("Please enter a valid Rappler news article URL");
+        toast.error("Please enter a valid URL from Rappler");
         return;
       }
       setCurArticle(url);
     } else {
       if (!curArticle.includes("rappler.com")) {
-        toast.error("Please enter a valid Rappler news article URL");
+        toast.error("Please enter a valid URL from Rappler");
         return;
       }
       router.replace(curUrl);
@@ -159,7 +159,7 @@ export const Home: NextPage = () => {
               Key Takeaways
             </h2>
             <div className="mx-auto mt-6 max-w-3xl text-lg leading-7">
-              {summary.split(/key[\.\s]/i).map((sentence, index) => (
+              {summary.split(/llego[\.\s]/i).map((sentence, index) => (
                 <p key={index} className="my-3">
                   {sentence}
                 </p>
@@ -168,11 +168,11 @@ export const Home: NextPage = () => {
             <div className="mx-auto mt-6 max-w-3xl text-lg leading-7">
               <p className="mt-2 flex rounded-lg bg-yellow-200 p-3 text-justify text-xs font-light leading-tight text-yellow-800">
                 <span className="md:pl-2">
-                  Disclaimer: This is an AI-generated summary of the original
+                  Disclaimer: This is an AI-generated key points of the original
                   article. It is not intended to replace the original content.
                   Accuracy and impartiality are not guaranteed. If you are not
-                  satisfied with the summary, simply click the "Summarize"
-                  button again for a new version.
+                  satisfied with the key points, simply click the "Generate Key
+                  Points" button again for a new version.
                 </span>
               </p>
             </div>
